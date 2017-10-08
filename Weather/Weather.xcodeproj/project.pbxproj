@@ -13,6 +13,7 @@
 		E03830611F8A59AF003C851B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03830601F8A59AF003C851B /* Location.swift */; };
 		E03830631F8A59CC003C851B /* GenerateInitialRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03830621F8A59CC003C851B /* GenerateInitialRealm.swift */; };
 		E03830661F8A8025003C851B /* city.list.realm in Resources */ = {isa = PBXBuildFile; fileRef = E03830641F8A8003003C851B /* city.list.realm */; };
+		E0AB90111F8A9189001A419C /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AB90101F8A9189001A419C /* Forecast.swift */; };
 		E0AE2B991F8A374E0086054F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AE2B981F8A374E0086054F /* AppDelegate.swift */; };
 		E0AE2B9B1F8A374E0086054F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AE2B9A1F8A374E0086054F /* ViewController.swift */; };
 		E0AE2B9E1F8A374E0086054F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0AE2B9C1F8A374E0086054F /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 		E03830601F8A59AF003C851B /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Location.swift; path = Weather/Model/Location.swift; sourceTree = SOURCE_ROOT; };
 		E03830621F8A59CC003C851B /* GenerateInitialRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateInitialRealm.swift; sourceTree = "<group>"; };
 		E03830641F8A8003003C851B /* city.list.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = city.list.realm; sourceTree = "<group>"; };
+		E0AB90101F8A9189001A419C /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		E0AE2B951F8A374E0086054F /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0AE2B981F8A374E0086054F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0AE2B9A1F8A374E0086054F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,15 @@
 			path = "Generate DB";
 			sourceTree = "<group>";
 		};
+		E0AB90121F8A971E001A419C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E03830641F8A8003003C851B /* city.list.realm */,
+				E038305D1F8A589D003C851B /* city.list.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		E0AE2B8C1F8A374E0086054F = {
 			isa = PBXGroup;
 			children = (
@@ -130,10 +141,9 @@
 				E0AE2BB91F8A4A090086054F /* ViewModel */,
 				E0AE2BBA1F8A4A120086054F /* Model */,
 				E0AE2BBB1F8A4A160086054F /* Network */,
+				E0AB90121F8A971E001A419C /* Resources */,
 				E038305F1F8A5964003C851B /* Generate DB */,
 				E0AE2B981F8A374E0086054F /* AppDelegate.swift */,
-				E03830641F8A8003003C851B /* city.list.realm */,
-				E038305D1F8A589D003C851B /* city.list.json */,
 				E0AE2B9F1F8A374E0086054F /* Assets.xcassets */,
 				E0AE2BA11F8A374E0086054F /* LaunchScreen.storyboard */,
 				E0AE2BA41F8A374E0086054F /* Info.plist */,
@@ -170,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				E03830601F8A59AF003C851B /* Location.swift */,
+				E0AB90101F8A9189001A419C /* Forecast.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -389,6 +400,7 @@
 				E0AE2B9B1F8A374E0086054F /* ViewController.swift in Sources */,
 				E03830611F8A59AF003C851B /* Location.swift in Sources */,
 				E0AE2B991F8A374E0086054F /* AppDelegate.swift in Sources */,
+				E0AB90111F8A9189001A419C /* Forecast.swift in Sources */,
 				E03830631F8A59CC003C851B /* GenerateInitialRealm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

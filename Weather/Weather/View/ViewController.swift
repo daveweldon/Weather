@@ -20,7 +20,14 @@ class ViewController: UIViewController {
         let realm = try! Realm(configuration: config)
         
         let results = realm.objects(Location.self).filter("name == 'London'")
-        print("number of search results = \(results.count)")
+        
+        guard let locationId = results.first?.locationId.value else { return }
+        
+        DataRequest.forecast(with: locationId) { [weak self] forecast in
+            guard let strongSelf = self else { return }
+            print(forecast)
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
