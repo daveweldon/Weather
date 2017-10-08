@@ -29,39 +29,35 @@ class DataRequest {
     static func forecast(with locationId: Int, completion: @escaping (Forecast)->Void) {
         let query = URLQueryItem(name: "id", value: "\(locationId)")
         
-        request(with: .forecast, queryItems: [query], completion: { json in
+        request(with: .forecast, queryItems: [query], completion: { json, error in
             if let nowPlaying = Forecast(JSONString: json) {
                 completion(nowPlaying)
             }
         })
     }
     
-    static private func request(with type: RequestType, queryItems: [URLQueryItem], completion: @escaping (String)->Void) {
+    static private func request(with type: RequestType, queryItems: [URLQueryItem], completion: @escaping (String, Error?)->Void) {
         guard let url = type.url(with: queryItems) else { return }
         print(url.absoluteString)
         _ = URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard error == nil else {
-                /* handle technical aspects of error here and,
-                 afterwards, pass a user friendly error back
-                 to the UI to be displayed to the user */
+                completion("", error)
                 return
             }
             
-            guard let response = response as? HTTPURLResponse else {
-                // send a human friendly error back to the UI
-                return
-            }
+            guard let response = response as? HTTPURLResponse else { return }
             
             switch response.statusCode {
             case 200:
                 if let data = data, let jsonString = String(data: data, encoding: String.Encoding.utf8) {
                     DispatchQueue.main.async(execute: {
-                        completion(jsonString) // Might want to move the parsing to another thread
+                        // Might want to move the parsing to another thread
+                        completion(jsonString, nil)
                     })
                 }
                 return
             case 401, 404:
-                // send a human friendly error back to the UI
+                completion("", WeatherError.init(response.statusCode).error)
                 return
             default:
                 return

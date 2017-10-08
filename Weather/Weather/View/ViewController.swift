@@ -10,6 +10,8 @@ import UIKit
 import RealmSwift
 
 class ViewController: UIViewController {
+    
+    var forecast: Forecast?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +27,7 @@ class ViewController: UIViewController {
         
         DataRequest.forecast(with: locationId) { [weak self] forecast in
             guard let strongSelf = self else { return }
-            print(forecast)
+            strongSelf.forecast = forecast
         }
         
     }
