@@ -53,7 +53,7 @@ class GenerateInitialRealm {
     
         // copy the file somewhere else, so that a smaller
         // file can be bundled with the app
-        try! realm.writeCopy(toFile: realmPath) catch { print("error copying realm database") }
+        try! realm.writeCopy(toFile: realmPath)
         
         print("• attempted to import \(recordCount) records.\n• copied to path \(realmPath)")
     }

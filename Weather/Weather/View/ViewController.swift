@@ -7,12 +7,20 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let config = Realm.Configuration(
+            fileURL: Bundle.main.url(forResource: "city.list", withExtension: "realm"),
+            readOnly: true)
+        let realm = try! Realm(configuration: config)
+        
+        let results = realm.objects(Location.self).filter("name == 'London'")
+        print("number of search results = \(results.count)")
     }
 
     override func didReceiveMemoryWarning() {
