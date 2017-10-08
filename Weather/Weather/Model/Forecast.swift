@@ -41,8 +41,9 @@ class Weather: Mappable {
         temp        <- map["main.temp"]
         tempMin     <- map["main.temp_min"]
         tempMax     <- map["main.temp_max"]
+        humidity    <- map["main.humidity"]
         windSpeed   <- map["wind.speed"]
-        humidity    <- map["humidity"]
+        type        <- map["weather"]
     }
 }
 
