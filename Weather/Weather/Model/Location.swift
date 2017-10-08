@@ -14,13 +14,3 @@ class Location: Object {
     @objc dynamic var name: String = ""
     @objc dynamic var country: String = ""
 }
-
-//    {
-//    "id": 707860,
-//    "name": "Hurzuf",
-//    "country": "UA",
-//    "coord": {
-//    "lon": 34.283333,
-//    "lat": 44.549999
-//    }
-//    }
