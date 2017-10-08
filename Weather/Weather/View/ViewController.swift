@@ -25,8 +25,13 @@ class ViewController: UIViewController {
         
         guard let locationId = results.first?.locationId.value else { return }
         
-        DataRequest.forecast(with: locationId) { [weak self] forecast in
+        DataRequest.forecast(with: locationId) { [weak self] forecast, error in
             guard let strongSelf = self else { return }
+            
+            if let error = error {
+                AlertFactory.alert(with: error)
+            }
+            
             strongSelf.forecast = forecast
         }
         

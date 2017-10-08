@@ -26,19 +26,19 @@ enum RequestType: String {
 
 class DataRequest {
     
-    static func forecast(with locationId: Int, completion: @escaping (Forecast)->Void) {
+    static func forecast(with locationId: Int, completion: @escaping (Forecast?, Error?)->Void) {
         let query = URLQueryItem(name: "id", value: "\(locationId)")
         
         request(with: .forecast, queryItems: [query], completion: { json, error in
-            if let nowPlaying = Forecast(JSONString: json) {
-                completion(nowPlaying)
-            }
+            let nowPlaying = Forecast(JSONString: json)
+            DispatchQueue.main.async(execute: {
+                completion(nowPlaying, error)
+            })
         })
     }
     
     static private func request(with type: RequestType, queryItems: [URLQueryItem], completion: @escaping (String, Error?)->Void) {
         guard let url = type.url(with: queryItems) else { return }
-        print(url.absoluteString)
         _ = URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard error == nil else {
                 completion("", error)
@@ -50,13 +50,10 @@ class DataRequest {
             switch response.statusCode {
             case 200:
                 if let data = data, let jsonString = String(data: data, encoding: String.Encoding.utf8) {
-                    DispatchQueue.main.async(execute: {
-                        // Might want to move the parsing to another thread
-                        completion(jsonString, nil)
-                    })
+                    completion(jsonString, nil)
                 }
                 return
-            case 401, 404:
+            case 400, 401, 404:
                 completion("", WeatherError.init(response.statusCode).error)
                 return
             default:
