@@ -48,7 +48,7 @@ class GenerateInitialRealm {
                     }
                 }
                 
-            } catch {}
+            } catch {} // Not bothered about exceptions for a one time load
         } catch {}
     
         // copy the file somewhere else, so that a smaller
