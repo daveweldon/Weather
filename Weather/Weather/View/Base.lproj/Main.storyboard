@@ -18,18 +18,52 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFX-Pf-uga">
-                                <rect key="frame" x="132.5" y="313" width="110" height="41"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <string key="text">Get started by
-tapping 🔎</string>
+tapping "🔎"</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r1K-N9-UCJ">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="THC-Ye-J3I">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="365"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="365" id="BKi-Jh-EVy"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="THC-Ye-J3I" secondAttribute="trailing" id="0Hg-mX-Vwc"/>
+                                    <constraint firstItem="THC-Ye-J3I" firstAttribute="top" secondItem="r1K-N9-UCJ" secondAttribute="top" id="5xU-mj-uMi"/>
+                                    <constraint firstItem="THC-Ye-J3I" firstAttribute="leading" secondItem="r1K-N9-UCJ" secondAttribute="leading" id="KCo-Uq-ZSn"/>
+                                    <constraint firstItem="THC-Ye-J3I" firstAttribute="top" secondItem="r1K-N9-UCJ" secondAttribute="top" id="Tx2-gb-VUI"/>
+                                    <constraint firstAttribute="trailing" secondItem="THC-Ye-J3I" secondAttribute="trailing" id="ZEv-Az-vod"/>
+                                    <constraint firstItem="THC-Ye-J3I" firstAttribute="leading" secondItem="r1K-N9-UCJ" secondAttribute="leading" id="eH7-Sn-W5Z"/>
+                                    <constraint firstAttribute="bottom" secondItem="THC-Ye-J3I" secondAttribute="bottom" constant="238" id="gcV-mK-qee"/>
+                                    <constraint firstItem="THC-Ye-J3I" firstAttribute="centerX" secondItem="r1K-N9-UCJ" secondAttribute="centerX" id="oQv-e2-CoS"/>
+                                    <constraint firstItem="THC-Ye-J3I" firstAttribute="leading" secondItem="r1K-N9-UCJ" secondAttribute="leading" id="rmB-0h-lvJ"/>
+                                    <constraint firstItem="THC-Ye-J3I" firstAttribute="top" secondItem="r1K-N9-UCJ" secondAttribute="top" id="u0g-mB-Cgq"/>
+                                    <constraint firstItem="THC-Ye-J3I" firstAttribute="leading" secondItem="r1K-N9-UCJ" secondAttribute="leading" id="wBg-Gw-HIZ"/>
+                                    <constraint firstItem="THC-Ye-J3I" firstAttribute="top" secondItem="r1K-N9-UCJ" secondAttribute="top" id="xMO-xu-jxm"/>
+                                    <constraint firstAttribute="trailing" secondItem="THC-Ye-J3I" secondAttribute="trailing" id="y8x-c6-ktn"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="kFX-Pf-uga" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="QHJ-He-iaI"/>
-                            <constraint firstItem="kFX-Pf-uga" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Xph-a9-1X9"/>
+                            <constraint firstItem="r1K-N9-UCJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="GVk-Kj-dW3"/>
+                            <constraint firstItem="r1K-N9-UCJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="XcC-4g-eGm"/>
+                            <constraint firstAttribute="trailing" secondItem="kFX-Pf-uga" secondAttribute="trailing" id="YHf-Xz-h3c"/>
+                            <constraint firstItem="r1K-N9-UCJ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bft-yd-aIx"/>
+                            <constraint firstItem="kFX-Pf-uga" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fYf-Fw-yEA"/>
+                            <constraint firstItem="r1K-N9-UCJ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="uTj-2M-CcY"/>
+                            <constraint firstItem="kFX-Pf-uga" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="vul-BH-Su8"/>
+                            <constraint firstItem="kFX-Pf-uga" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zvD-3N-HPH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -40,6 +74,10 @@ tapping 🔎</string>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="detailScrollView" destination="r1K-N9-UCJ" id="4cU-pX-hyB"/>
+                        <outlet property="holdingLabel" destination="kFX-Pf-uga" id="Hzb-Hm-CL7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

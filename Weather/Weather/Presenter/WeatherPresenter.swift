@@ -19,7 +19,7 @@ protocol WeatherView: PresenterView {
 }
 
 class WeatherPresenter {
-    
+
     fileprivate var weatherView: WeatherView?
     
     init(weatherView: WeatherView) {

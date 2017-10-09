@@ -7,15 +7,25 @@
 //
 
 import UIKit
+import PKHUD
 
 class WeatherViewController: UIViewController {
     
-    fileprivate var locations           = [Location]()
-    fileprivate var forecast            : Forecast?
+    @IBOutlet weak var holdingLabel: UILabel!
+    @IBOutlet weak var detailScrollView: UIScrollView!
+    
     fileprivate var resultsController   : UITableViewController?
     fileprivate var searchController    : UISearchController?
     fileprivate var locationPresenter   : LocationPresenter?
     fileprivate var weatherPresenter    : WeatherPresenter?
+    fileprivate let cellIdentifier      = "identifier"
+    fileprivate var locations           = [Location]()
+    fileprivate var forecast            : Forecast? {
+        didSet {
+            holdingLabel.isHidden = (forecast != nil)
+            detailScrollView.isHidden = (forecast == nil)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,14 +37,12 @@ class WeatherViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func didSelectSearch(_ sender: UIBarButtonItem) {
         resultsController = UITableViewController(style: .plain)
         resultsController?.tableView.delegate = self
         resultsController?.tableView.dataSource = self
-        
         searchController = UISearchController(searchResultsController: resultsController)
         searchController?.searchResultsUpdater = self
         
@@ -60,15 +68,15 @@ extension WeatherViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell : UITableViewCell? = tableView.dequeueReusableCell(withIdentifier: "identifier")
+        var cell : UITableViewCell? = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
         
         if cell == nil {
-            cell = UITableViewCell(style: .default, reuseIdentifier: "identifier")
+            cell = UITableViewCell(style: .default, reuseIdentifier: cellIdentifier)
         }
 
         let location = locations[indexPath.row]
         cell!.textLabel?.text = "\(location.name), \(location.country)"
-        
+
         return cell!
     }
     
@@ -98,15 +106,15 @@ extension WeatherViewController: LocationView {
 extension WeatherViewController: WeatherView {
     
     func startLoading() {
-        
+        HUD.show(.progress)
     }
     
     func finishLoading() {
-        
+        HUD.hide()
     }
     
     func set(forecast: Forecast?) {
-        
+        self.forecast = forecast
     }
     
     func present(_ error: Error) {

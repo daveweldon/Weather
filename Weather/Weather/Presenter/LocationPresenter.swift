@@ -10,9 +10,7 @@ import Foundation
 import RealmSwift
 
 protocol LocationView {
-    
     func set(locations: [Location])
-    
 }
 
 class LocationPresenter {
@@ -35,15 +33,17 @@ class LocationPresenter {
         updateLocations()
     }
 
+    // with more time, dispactch searching on a background thread
+    // passing realm across boundaries with ThreadSafeReference()
     fileprivate func updateLocations() {
         var locations = realm.objects(Location.self)
         
         if searchText != "" {
-            locations = realm.objects(Location.self).filter("name BEGINSWITH '\(searchText)'")
+            locations = realm.objects(Location.self).filter("name BEGINSWITH[c] '\(searchText)'")
         }
 
         let locationArray = Array(locations.sorted(byKeyPath: "name", ascending: true))
         locationView.set(locations: locationArray)
     }
-    
+
 }

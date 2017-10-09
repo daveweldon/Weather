@@ -1,20 +1,23 @@
 PODS:
   - ObjectMapper (3.0.0)
-  - Realm (2.10.1):
-    - Realm/Headers (= 2.10.1)
-  - Realm/Headers (2.10.1)
-  - RealmSwift (2.10.1):
-    - Realm (= 2.10.1)
+  - PKHUD (5.0.0)
+  - Realm (2.10.2):
+    - Realm/Headers (= 2.10.2)
+  - Realm/Headers (2.10.2)
+  - RealmSwift (2.10.2):
+    - Realm (= 2.10.2)
 
 DEPENDENCIES:
   - ObjectMapper (~> 3.0)
+  - PKHUD (~> 5.0)
   - RealmSwift
 
 SPEC CHECKSUMS:
   ObjectMapper: 92230db59bf8f341a5c3a3cf0b9fbdde3cf0d87f
-  Realm: fc7a317a5c2c9ba91f5f235ede4e2ea76e9eba0c
-  RealmSwift: 505ed6c15942a2e76f5cfa78a8667cfa997ee75b
+  PKHUD: 3c001512c6e002091184197a8de7a20420786e3b
+  Realm: 0ef72b837fb67e9f4b098bac771ddd72c7fdbb69
+  RealmSwift: 07a9ae0505091eda6b2ee7c190c3786d6e90a7b0
 
-PODFILE CHECKSUM: 33591cb587c9c9852b27d67a07ffbf49b98dfdeb
+PODFILE CHECKSUM: 2106230e198a99891f8cc6e6569c6c30334132c7
 
 COCOAPODS: 1.1.1
