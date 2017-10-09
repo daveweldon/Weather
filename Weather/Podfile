@@ -9,6 +9,7 @@ target 'Weather' do
   pod 'RealmSwift'
   pod 'ObjectMapper', '~> 3.0'
   pod 'PKHUD', '~> 5.0'
+  pod 'SDWebImage', '~> 4.1'
 
   target 'WeatherTests' do
     inherit! :search_paths

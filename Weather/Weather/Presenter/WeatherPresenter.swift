@@ -27,8 +27,10 @@ class WeatherPresenter {
     }
     
     func search(locationId: Int) {
+        weatherView?.startLoading()
         DataRequest.forecast(with: locationId) { [weak self] forecast, error in
             guard let strongSelf = self else { return }
+            strongSelf.weatherView?.finishLoading()
             
             if let error = error {
                 strongSelf.weatherView?.present(error)

@@ -25,7 +25,7 @@ class Forecast: Mappable {
 class Weather: Mappable {
     fileprivate var rawDate: Double?
     var date: Date {
-        return Date()
+        return Date(timeIntervalSince1970: rawDate ?? 0)
     }
     var temp: Float?
     var tempMin: Float?
@@ -50,7 +50,11 @@ class Weather: Mappable {
 class WeatherType: Mappable {
     var main: String?
     var desc: String?
-    var icon: String?
+    fileprivate var icon: String?
+    var iconURL: URL? {
+        guard let icon = icon else { return nil }
+        return URL(string: "http://openweathermap.org/img/w/\(icon).png")
+    }
     
     required init?(map: Map) {}
     

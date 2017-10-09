@@ -20,6 +20,7 @@ enum RequestType: String {
         components.path = "/data/2.5/\(self.rawValue)"
         components.queryItems = queryItems
         components.queryItems?.append(URLQueryItem(name: "APPID", value: apiKey))
+        components.queryItems?.append(URLQueryItem(name: "units", value: "metric"))
         return components.url
     }
 }

@@ -6,18 +6,23 @@ PODS:
   - Realm/Headers (2.10.2)
   - RealmSwift (2.10.2):
     - Realm (= 2.10.2)
+  - SDWebImage (4.1.2):
+    - SDWebImage/Core (= 4.1.2)
+  - SDWebImage/Core (4.1.2)
 
 DEPENDENCIES:
   - ObjectMapper (~> 3.0)
   - PKHUD (~> 5.0)
   - RealmSwift
+  - SDWebImage (~> 4.1)
 
 SPEC CHECKSUMS:
   ObjectMapper: 92230db59bf8f341a5c3a3cf0b9fbdde3cf0d87f
   PKHUD: 3c001512c6e002091184197a8de7a20420786e3b
   Realm: 0ef72b837fb67e9f4b098bac771ddd72c7fdbb69
   RealmSwift: 07a9ae0505091eda6b2ee7c190c3786d6e90a7b0
+  SDWebImage: cb6f9f266a9977741efcbc21e618e8be3734c774
 
-PODFILE CHECKSUM: 2106230e198a99891f8cc6e6569c6c30334132c7
+PODFILE CHECKSUM: 8a0540e3a1680e270ce08718548e7febc50635ec
 
 COCOAPODS: 1.1.1

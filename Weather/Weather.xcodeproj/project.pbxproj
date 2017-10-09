@@ -24,6 +24,8 @@
 		E0B292371F8AD20C009F337B /* AlertFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B292361F8AD20C009F337B /* AlertFactory.swift */; };
 		E0B292391F8BCBE2009F337B /* WeatherPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B292381F8BCBE2009F337B /* WeatherPresenter.swift */; };
 		E0B2923B1F8BCC3D009F337B /* LocationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B2923A1F8BCC3D009F337B /* LocationPresenter.swift */; };
+		E0B2923D1F8C0F07009F337B /* WeatherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B2923C1F8C0F07009F337B /* WeatherCollectionViewCell.swift */; };
+		E0B2923F1F8C1690009F337B /* PagingCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B2923E1F8C1690009F337B /* PagingCollectionViewFlowLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		E0B292361F8AD20C009F337B /* AlertFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertFactory.swift; sourceTree = "<group>"; };
 		E0B292381F8BCBE2009F337B /* WeatherPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherPresenter.swift; sourceTree = "<group>"; };
 		E0B2923A1F8BCC3D009F337B /* LocationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPresenter.swift; sourceTree = "<group>"; };
+		E0B2923C1F8C0F07009F337B /* WeatherCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCollectionViewCell.swift; sourceTree = "<group>"; };
+		E0B2923E1F8C1690009F337B /* PagingCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +179,8 @@
 			children = (
 				E0AE2B9C1F8A374E0086054F /* Main.storyboard */,
 				E0AE2B9A1F8A374E0086054F /* WeatherViewController.swift */,
+				E0B2923C1F8C0F07009F337B /* WeatherCollectionViewCell.swift */,
+				E0B2923E1F8C1690009F337B /* PagingCollectionViewFlowLayout.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -410,9 +416,11 @@
 			files = (
 				E038305C1F8A4D81003C851B /* DataRequest.swift in Sources */,
 				E0AE2B9B1F8A374E0086054F /* WeatherViewController.swift in Sources */,
+				E0B2923D1F8C0F07009F337B /* WeatherCollectionViewCell.swift in Sources */,
 				E0B292391F8BCBE2009F337B /* WeatherPresenter.swift in Sources */,
 				E03830611F8A59AF003C851B /* Location.swift in Sources */,
 				E0AE2B991F8A374E0086054F /* AppDelegate.swift in Sources */,
+				E0B2923F1F8C1690009F337B /* PagingCollectionViewFlowLayout.swift in Sources */,
 				E0AB90111F8A9189001A419C /* Forecast.swift in Sources */,
 				E0B292371F8AD20C009F337B /* AlertFactory.swift in Sources */,
 				E0B2923B1F8BCC3D009F337B /* LocationPresenter.swift in Sources */,
@@ -578,7 +586,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nsdave.Weather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -594,7 +602,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nsdave.Weather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
