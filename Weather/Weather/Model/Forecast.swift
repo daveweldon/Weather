@@ -11,7 +11,10 @@ import ObjectMapper
 
 class Forecast: Mappable {
     var cnt: Int?
-    var list: [Weather]?
+    fileprivate var list: [Weather]?
+    var weather: [Weather]? {
+        return list?.sorted { $0.rawDate ?? 0 < $1.rawDate ?? 0 }
+    }
     
     required init?(map: Map) {}
     

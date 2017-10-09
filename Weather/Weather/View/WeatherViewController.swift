@@ -150,13 +150,13 @@ extension WeatherViewController: WeatherView {
 extension WeatherViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return forecast?.list?.count ?? 0
+        return forecast?.weather?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionCellId, for: indexPath as IndexPath) as! WeatherCollectionViewCell
         
-        if let weathers = forecast?.list {
+        if let weathers = forecast?.weather {
             cell.configure(with: weathers[indexPath.row])
         }
         
