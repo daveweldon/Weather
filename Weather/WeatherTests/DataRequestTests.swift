@@ -24,7 +24,7 @@ class DataRequestTests: XCTestCase {
     func testRequestTypeForecast_valid() {
         let query = URLQueryItem(name: "testKey", value: "testValue")
         let url = RequestType.forecast.url(with: [query])
-        XCTAssertTrue(url?.absoluteString == "http://api.openweathermap.org/data/2.5/forecast?testKey=testValue&APPID=816287136a0140daed993a38804be8a2", "Incorrect creation of forecast url from RequestType")
+        XCTAssertTrue(url?.absoluteString == "http://api.openweathermap.org/data/2.5/forecast?testKey=testValue&APPID=816287136a0140daed993a38804be8a2&units=metric", "Incorrect creation of forecast url from RequestType")
     }
     
     func testRequst_valid() {
